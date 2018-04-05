@@ -13,5 +13,4 @@ std::wstring getCurrentDirectory()
 	std::wstring pwd(buffer);
 	free(buffer);
 	return pwd;
-
 }

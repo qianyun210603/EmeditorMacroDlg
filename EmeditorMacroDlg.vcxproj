@@ -139,12 +139,15 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>set pluginfolder=E:\Applications\EmEditor64\PlugIns
-if exist %pluginfolder% and exist $(TargetDir)$(TargetName).dll (
-echo Copying generated dll to Emeditor plugin folder
-xcopy $(TargetDir)$(TargetName).dll %pluginfolder% /y /D
-)
-</Command>
+      <Command>@echo off
+set pluginfolder=E:\Applications\EmEditor64\PlugIns
+if exist %pluginfolder% (
+echo Copy to emeditor plugin folder
+xcopy $(TargetDir)$(TargetFileName) %pluginfolder% /y /D
+echo Complete
+) else (
+echo Copy failed
+)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

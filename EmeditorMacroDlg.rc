@@ -13,47 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Traditional, Taiwan) resources
+// Chinese (Simplified, PRC) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
-#pragma code_page(950)
-
-#ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// TEXTINCLUDE
-//
-
-1 TEXTINCLUDE 
-BEGIN
-    "resource.h\0"
-END
-
-2 TEXTINCLUDE 
-BEGIN
-    "#include ""afxres.h""\r\n"
-    "\0"
-END
-
-3 TEXTINCLUDE 
-BEGIN
-    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
-    "#define _AFX_NO_OLE_RESOURCES\r\n"
-    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
-    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
-    "\r\n"
-    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
-    "LANGUAGE 4, 1\r\n"
-    "#pragma code_page(950)\r\n"
-    "#include ""res\\HelloMFC.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
-    "#include ""afxres.rc""     // Standard components\r\n"
-    "#endif\r\n"
-    "\0"
-END
-
-#endif    // APSTUDIO_INVOKED
-
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -99,25 +63,19 @@ END
 // Dialog
 //
 
-IDD_DIALOG1 DIALOGEX 0, 0, 186, 68
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 500, 50
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "demo of Hello-MFC"
+CAPTION "Please input the title RegEx"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    EDITTEXT        IDC_EDIT1,55,7,57,14,ES_AUTOHSCROLL
-    CONTROL         "test CheckBox",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,28,62,10
-    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
-    LTEXT           "test edit",IDC_STATIC,14,10,28,8
+    DEFPUSHBUTTON   "OK",IDOK,443,7,50,15
+    PUSHBUTTON      "Cancel",IDCANCEL,443,28,50,15
+    CONTROL         "Match inner text",IDC_MATCH_INNER_TEXT,"Button",BS_AUTOCHECKBOX | BS_VCENTER | WS_TABSTOP,7,9,69,10
+    CONTROL         "Regex includes in-title separator",IDC_REGEX_INC_TITEL_SEP,
+                    "Button",BS_AUTOCHECKBOX | BS_VCENTER | WS_TABSTOP,86,9,119,10
+    PUSHBUTTON      "Add Title Level",IDC_ADD_TITLE_LEVEL,220,7,73,15
+    PUSHBUTTON      "Add Current Choices to Default",IDC_ADD_TO_DEFAULT,314,7,114,15
 END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Bitmap
-//
-
-IDB_BITMAP              BITMAP                  "bitmap1.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -128,12 +86,12 @@ IDB_BITMAP              BITMAP                  "bitmap1.bmp"
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO
 BEGIN
-    IDD_DIALOG1, DIALOG
+    IDD_MAIN_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 179
+        RIGHTMARGIN, 493
         TOPMARGIN, 7
-        BOTTOMMARGIN, 61
+        BOTTOMMARGIN, 43
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -144,10 +102,64 @@ END
 // AFX_DIALOG_LAYOUT
 //
 
-IDD_DIALOG1 AFX_DIALOG_LAYOUT
+IDD_MAIN_DIALOG AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Traditional, Taiwan) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#pragma code_page(950)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)\r\n"
+    "LANGUAGE 4, 1\r\n"
+    "#pragma code_page(950)\r\n"
+    "#include ""res\\EmeditorMacroDlg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP              BITMAP                  "bitmap1.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -161,6 +173,16 @@ BEGIN
     IDS_STATUS_MESSAGE      "Hello-MFC"
     IDS_VERSION             "1.00"
     IDS_SURE_TO_UNINSTALL   "Are you sure you want to uninstall this plug-in?"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MYWIDGETLABELS      "widget labels"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MYWIDGETS           "widget"
 END
 
 #endif    // Chinese (Traditional, Taiwan) resources

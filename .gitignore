@@ -6,3 +6,4 @@ Debug/
 *.vcxproj.user
 copy_to_emeditor_folder.bat
 x64/
+rapidjson/

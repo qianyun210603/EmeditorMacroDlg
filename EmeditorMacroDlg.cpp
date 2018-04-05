@@ -103,13 +103,9 @@ LRESULT CMyFrame::UserMessage(HWND hwndView, WPARAM wParam, LPARAM lParam)
 		sMsg.Format(
 			L"============================\n"
 			L"Hello World!!\n"
-			L"input text = [%s]\n"
-			L"choose CheckBox = [%d]\n"
 			L"strParam = [%s]\n"
 			L"lParam = [%d]\n"
 			L"============================\n",
-			dlg.m_sEdit.GetString(),
-			dlg.m_bChk,
 			(LPCWSTR)lParam,
 			wParam
 		);
@@ -132,12 +128,8 @@ void CMyFrame::OnCommand(HWND hwndView)
         sMsg.Format(
             L"============================\n"
             L"Hello World!!\n"
-            L"input text = [%s]\n"
-            L"choose CheckBox = [%d]\n"
 			L"current Directory = [%s]\n"
             L"============================\n",
-            dlg.m_sEdit.GetString(),
-            dlg.m_bChk,
 			getCurrentDirectory().c_str()
         );
 	    // writes "Hello Worlds" and user input data in the text editor.
