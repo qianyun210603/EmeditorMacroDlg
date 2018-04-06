@@ -95,46 +95,19 @@ BOOL CMyFrame::PreTranslateMessage( HWND /*hwndView*/, MSG* pMsg )
 
 LRESULT CMyFrame::UserMessage(HWND hwndView, WPARAM wParam, LPARAM lParam)
 {
-	CString     sMsg;
-	CDemoDlg    dlg;
-	//CString     fromParent((LPCWSTR)lParam);
+	LPWSTR      buffer = (LPWSTR)lParam;
+	UINT        bufferFlag = static_cast<UINT>(wParam);
+	CDemoDlg    dlg(buffer, bufferFlag);
 
 	if (dlg.DoModal() == IDOK) {
-		sMsg.Format(
-			L"============================\n"
-			L"Hello World!!\n"
-			L"strParam = [%s]\n"
-			L"lParam = [%d]\n"
-			L"============================\n",
-			(LPCWSTR)lParam,
-			wParam
-		);
-		LPWSTR returnMsg = L"我被改变了haha";
-		wcscpy((LPWSTR)lParam, returnMsg);
-		// writes "Hello Worlds" and user input data in the text editor.
-		Editor_InsertW(hwndView, sMsg, true);
+		return dlg.getBufferFlag();
 	}
-
-	return 5;
+	return 0;
 }
 
 // The plug-in has been selected from a menu or a toolbar.
 void CMyFrame::OnCommand(HWND hwndView)
 {
-    CString     sMsg;
-    CDemoDlg    dlg;
-    
-    if (dlg.DoModal() == IDOK) {
-        sMsg.Format(
-            L"============================\n"
-            L"Hello World!!\n"
-			L"current Directory = [%s]\n"
-            L"============================\n",
-			getCurrentDirectory().c_str()
-        );
-	    // writes "Hello Worlds" and user input data in the text editor.
-	    Editor_InsertW( hwndView, sMsg, true);
-    }
 }
 
 // When a status is changed, this function is called with the Events parameter.

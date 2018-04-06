@@ -200,6 +200,17 @@ echo Copy failed
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
+    <PostBuildEvent>
+      <Command>@echo off
+set pluginfolder=E:\Applications\EmEditor64\PlugIns
+if exist %pluginfolder% (
+echo Copy to emeditor plugin folder
+xcopy $(TargetDir)$(TargetFileName) %pluginfolder% /y /D
+echo Complete
+) else (
+echo Copy failed
+)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DemoDlg.cpp" />
