@@ -1,6 +1,8 @@
 ### Emeditor插件：用于“排版脚本自由与分享版”的弹出式对话框
 
 调用方式：
+首先按安装插件的方法安装"EmeditorMacroDlg.dll"。     
+然后在Emeditor宏里调用
 ```javascript
 var buffer = precomment + new Array(1024 - precomment.length + 1).join( "*" );
 var bufferFlag = editor.ExecutePlugin(
@@ -16,4 +18,4 @@ var bufferFlag = editor.ExecutePlugin(
 `buffer`：String类型。输入/输出。输入提示文字；输出所有结果正则表达式，以`\n`分隔。
 
 返回值：
-“匹配内文”复选框状态（bit 1）、“标题分隔符已包含”复选框状态（bit 2）、所有结果正则表达式长度和（bit 3+）
+“匹配内文”复选框状态（bit 1）、“标题分隔符已包含”复选框状态（bit 2）、所有结果正则表达式长度和（bit 3+
