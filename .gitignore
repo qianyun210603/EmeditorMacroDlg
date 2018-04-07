@@ -3,3 +3,11 @@ Debug/
 *.aps
 *.vcxproj.filters
 *.vcxproj.user
+*.tlog
+*.obj
+*.pdb
+*.iobj
+*.ipdb
+*.log
+*.exp
+*.lastbuildstate
