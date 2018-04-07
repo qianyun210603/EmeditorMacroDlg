@@ -11,3 +11,5 @@ Debug/
 *.log
 *.exp
 *.lastbuildstate
+*.pch
+*.res

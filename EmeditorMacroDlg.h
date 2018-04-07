@@ -80,3 +80,23 @@ public:
 	CMyFrame();
 	~CMyFrame();
 };
+
+
+
+//-------------------------------------------------------------------------------------------------
+// EmeditorMacroDlg
+// See HelloMFC.cpp for the implementation of this class
+//
+
+class EmeditorMacroDlg : public CWinApp
+{
+public:
+	EmeditorMacroDlg();
+
+	// Overrides
+public:
+	virtual BOOL InitInstance();
+	virtual int ExitInstance();
+
+	DECLARE_MESSAGE_MAP()
+};

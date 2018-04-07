@@ -51,3 +51,4 @@ public:
 	afx_msg void OnBnClickedAddTitleLevel();
 	afx_msg void OnBnClickedAddToDefault();
 };
+

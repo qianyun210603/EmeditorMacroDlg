@@ -127,3 +127,37 @@ BOOL CMyFrame::SetUninstall( HWND hDlg, LPTSTR pszUninstallCommand, LPTSTR pszUn
 	}
 	return UNINSTALL_FALSE;
 }
+
+
+
+//-------------------------------------------------------------------------------------------------
+// EmeditorMacroDlg
+
+BEGIN_MESSAGE_MAP(EmeditorMacroDlg, CWinApp)
+END_MESSAGE_MAP()
+
+// The one and only EmeditorMacroDlg object
+EmeditorMacroDlg theApp;
+
+
+// EmeditorMacroDlg construction
+
+EmeditorMacroDlg::EmeditorMacroDlg()
+{
+}
+
+// EmeditorMacroDlg initialization
+
+BOOL EmeditorMacroDlg::InitInstance()
+{
+	CWinApp::InitInstance();
+	OnDllProcess_AttachDetach(true);
+
+	return TRUE;
+}
+
+int EmeditorMacroDlg::ExitInstance()
+{
+	OnDllProcess_AttachDetach(false);
+		return CWinApp::ExitInstance();
+}
