@@ -112,8 +112,6 @@ int CDemoDlg::addOneTitleLevel()
 	}
 
 	m_pLabels.back()->Create(label.c_str(), WS_VISIBLE | SS_CENTERIMAGE, labelRect, this, IDC_MYWIDGETLABELS + numWidget);
-	//CFont* font = GetDlgItem(IDC_INCLUDE_INTEXT)->GetFont();
-	//m_pLabels.back()->SetFont(font);
 	CRect widgetRect(widgetLeft, top, widgetLeft + widgetWidth, top + height + comboDropListHeight);
 	MapDialogRect(widgetRect);
 	m_pWidgets.push_back(new CComboBox);
