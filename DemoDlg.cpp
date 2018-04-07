@@ -103,11 +103,11 @@ int CDemoDlg::addOneTitleLevel()
 	CRect labelRect(labelLeft, top, labelLeft + labelWidth, top + height);
 	MapDialogRect(labelRect);
 	m_pLabels.push_back(new CStatic());
-	std::wstring label = L"Title Regex:";
+	std::wstring label = L"标题正则表达式:";
 	if (numWidget > 0)
 	{
 		std::wostringstream attacher;
-		attacher << label.substr(0, label.length() - 1) << L' ' << numWidget + 1 << L':';
+		attacher << label.substr(0, label.length() - 1) << numWidget + 1 << L':';
 		label = attacher.str();
 	}
 
@@ -171,7 +171,7 @@ void CDemoDlg::OnBnClickedAddTitleLevel()
 	MoveWindow(&rect);
 	if (this->addOneTitleLevel())
 	{
-		m_pLabels[0]->SetWindowTextW(L"Title Regex 1:");
+		m_pLabels[0]->SetWindowTextW(L"标题正则表达式1:");
 		m_pLabels[0]->UpdateData();
 	}
 }

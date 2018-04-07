@@ -80,23 +80,3 @@ public:
 	CMyFrame();
 	~CMyFrame();
 };
-
-
-//-------------------------------------------------------------------------------------------------
-// CHelloMFCApp
-// See HelloMFC.cpp for the implementation of this class
-//
-
-class CHelloMFCApp : public CWinApp
-{
-public:
-	CHelloMFCApp();
-
-// Overrides
-public:
-	virtual BOOL InitInstance();
-    virtual int ExitInstance();
-
-	DECLARE_MESSAGE_MAP()
-};
-
